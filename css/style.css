@@ -7,7 +7,7 @@
 .container{
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 0.45)), url('./image/background1.JPG');
+    background-image: linear-gradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 0.45)), url(../image/background1.JPG);
     background-size: cover;
     background-position: center;
     padding: 10px 8%;
