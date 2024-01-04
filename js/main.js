@@ -27,6 +27,17 @@ scene.add(mesh);
 scene.add(new THREE.BoxHelper(mesh, 0x000000));
 */
 
+const controls = new OrbitControls(cam, renderer.domElement);
+controls.enableDamping = true;
+controls.enablePan = false;
+controls.minDistance = 5;
+controls.maxDistance = 20;
+controls.minPolarAngle = 0.5;
+controls.maxpolarAngle = 1.5;
+controls.autoRotate = false;
+controls.newTarget = new THREE.Vector3(0, 1, 0);
+controls.update();
+
 const loader = new GLTFLoader().setPath('./3D/rumah_contoh/')
 loader.load('SampleLevel.glb', (gltf) => {
     const mesh = gltf.scene;
@@ -42,7 +53,7 @@ loader.load('SampleLevel.glb', (gltf) => {
     scene.add(mesh);
 })
 
-let pGeo = new THREE.PlaneGeometry(10, 10, 100, 100);
+/*let pGeo = new THREE.PlaneGeometry(10, 10, 100, 100);
 let pMat = new THREE.MeshPhongMaterial({
     color: 0xffffff, side: THREE.DoubleSide
 });
@@ -51,7 +62,7 @@ let pMesh = new THREE.Mesh(pGeo, pMat);
 pMesh.rotation.x -= Math.PI / 2;
 pMesh.position.set(0, -1, 0);
 pMesh.receiveShadow = true;
-scene.add(pMesh);
+scene.add(pMesh);*/
 
 let ambient = new THREE.AmbientLight(0xffffff,0.4);
 scene.add(ambient);
