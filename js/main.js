@@ -1,6 +1,6 @@
 import * as THREE from 'three';
-import {GLTFLoader} from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
-import {OrbitControls} from './node_modules/three/examples/jsm/controls/OrbitControls.js';
+import {GLTFLoader} from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+import {OrbitControls} from '../node_modules/three/examples/jsm/controls/OrbitControls.js';
 
 var scene = new THREE.Scene();
 var cam = new THREE.PerspectiveCamera(45,window.innerWidth/window.innerHeight, 1, 1000);
@@ -11,7 +11,7 @@ cam.position.y += 5;
 
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.BasicShadowMap;
-renderer.setSize(window.innerWidth/2, window.innerHeight/2);
+renderer.setSize(window.innerWidth*0.8, window.innerHeight*0.8);
 renderer.setPixelRatio(devicePixelRatio);
 document.getElementById('canvas').appendChild(renderer.domElement);
 
@@ -42,7 +42,7 @@ loader.load('SampleLevel.glb', (gltf) => {
     scene.add(mesh);
 })
 
-/*let pGeo = new THREE.PlaneGeometry(10, 10, 100, 100);
+let pGeo = new THREE.PlaneGeometry(10, 10, 100, 100);
 let pMat = new THREE.MeshPhongMaterial({
     color: 0xffffff, side: THREE.DoubleSide
 });
@@ -51,7 +51,7 @@ let pMesh = new THREE.Mesh(pGeo, pMat);
 pMesh.rotation.x -= Math.PI / 2;
 pMesh.position.set(0, -1, 0);
 pMesh.receiveShadow = true;
-scene.add(pMesh);*/
+scene.add(pMesh);
 
 let ambient = new THREE.AmbientLight(0xffffff,0.4);
 scene.add(ambient);
@@ -62,13 +62,18 @@ pLight.castShadow = true;
 scene.add(pLight);
 scene.add(new THREE.PointLightHelper(pLight, 0.2, 0x000000));
 
-var controls = new THREE.OrbitControls(cam, renderer.domElement);
+//var controls = new THREE.OrbitControls(cam, renderer.domElement);
 
-/*window.addEventListener('resize', function(){
+window.addEventListener('resize', function(){
     var width = window.innerWidth;
     var height = window.innerHeight; 
-    renderer.setSize(width/2, height/2);
+    renderer.setSize(width*0.8, height*0.8);
     cam.aspect = width/height;
     cam.updateProjectionMatrix();
-});*/
-renderer.render(scene, cam);
+});
+function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, cam);
+}
+
+animate();
