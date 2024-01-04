@@ -17,15 +17,7 @@ document.getElementById('canvas').appendChild(renderer.domElement);
 
 scene.background = new THREE.Color(0xD8F2FF);
 
-//let geo = new THREE.BoxGeometry(1, 1, 1);
 let texture = new THREE.TextureLoader().load('./image/logo_hitam.JPG');
-/*let mat = new THREE.MeshStandardMaterial({roughness: 10});
-let mesh = new THREE.Mesh(geo, mat);
-mesh.castShadow = true;
-mesh.receiveShadow = true;
-scene.add(mesh);
-scene.add(new THREE.BoxHelper(mesh, 0x000000));
-*/
 
 const controls = new OrbitControls(cam, renderer.domElement);
 controls.enableDamping = true;
@@ -53,17 +45,6 @@ loader.load('SampleLevel.glb', (gltf) => {
     scene.add(mesh);
 })
 
-/*let pGeo = new THREE.PlaneGeometry(10, 10, 100, 100);
-let pMat = new THREE.MeshPhongMaterial({
-    color: 0xffffff, side: THREE.DoubleSide
-});
-pMat.map = texture;
-let pMesh = new THREE.Mesh(pGeo, pMat);
-pMesh.rotation.x -= Math.PI / 2;
-pMesh.position.set(0, -1, 0);
-pMesh.receiveShadow = true;
-scene.add(pMesh);*/
-
 let ambient = new THREE.AmbientLight(0xffffff,0.4);
 scene.add(ambient);
 
@@ -72,8 +53,6 @@ pLight.position.set(1, 4, 1);
 pLight.castShadow = true;
 scene.add(pLight);
 scene.add(new THREE.PointLightHelper(pLight, 0.2, 0x000000));
-
-//var controls = new THREE.OrbitControls(cam, renderer.domElement);
 
 window.addEventListener('resize', function(){
     var width = window.innerWidth;
