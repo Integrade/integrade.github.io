@@ -15,7 +15,7 @@ renderer.setSize(window.innerWidth*0.8, window.innerHeight*0.8);
 renderer.setPixelRatio(devicePixelRatio);
 document.getElementById('canvas').appendChild(renderer.domElement);
 
-scene.background = new THREE.Color(0xfafafa);
+scene.background = new THREE.Color(0xD8F2FF);
 
 //let geo = new THREE.BoxGeometry(1, 1, 1);
 let texture = new THREE.TextureLoader().load('./image/logo_hitam.JPG');
