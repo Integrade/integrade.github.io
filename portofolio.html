@@ -17,9 +17,18 @@
             </ul>
         </nav>
         <div class="content">
-            <script src="node_modules/three/build/three.js"></script>
-            <script src="js/main.js"></script>
-            <li><a href="threedim.html">Three Dimension</a></li>
+            <script type="importmap">
+                {
+                    "imports": {
+                        "three": "./node_modules/three/build/three.module.js" 
+                    }
+                }
+            </script>
+            <div id="canvas"></div>
+            <ul>
+                Rumah Contoh 
+             </ul>
+             <script type="module" src="js/main.js"></script>
         </div>
     </div>
 </body>

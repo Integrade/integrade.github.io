@@ -42,8 +42,8 @@ spotLight.position.set(0, 25, 0);
 spotLight.castShadow = true;
 scene.add(spotLight);
 
-const loader = new GLTFLoader().setPath('./3D/Sample/')
-loader.load('SampleLevel.gltf', (gltf) => {
+const loader = new GLTFLoader().setPath('./3D/rumah_contoh/')
+loader.load('SampleLevel.glb', (gltf) => {
     const mesh = gltf.scene;
 
     mesh.traverse((child) => {
