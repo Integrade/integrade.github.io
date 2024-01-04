@@ -27,7 +27,7 @@ scene.add(mesh);
 scene.add(new THREE.BoxHelper(mesh, 0x000000));
 */
 
-const loader = new GLTFLoader().setPath('../3D/rumah_contoh/')
+const loader = new GLTFLoader().setPath('./3D/rumah_contoh/')
 loader.load('SampleLevel.glb', (gltf) => {
     const mesh = gltf.scene;
 
