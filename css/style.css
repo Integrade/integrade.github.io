@@ -59,3 +59,17 @@ nav ul li a{
 .content canvas{
     padding-right: 10px;
 }
+@media screen and (max-width: 600px) {
+    .content h1{
+        font-size: 35px;
+        font-weight: 600;
+        line-height: 42px;
+        margin-bottom: 37px;
+    }
+    .content p{
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 20px;
+        margin-bottom: 37px;
+    }
+}
