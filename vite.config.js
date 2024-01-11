@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/integrade.github.io/",
   plugins: [react()],
-  base: "/integrade.github.io/"
 })
